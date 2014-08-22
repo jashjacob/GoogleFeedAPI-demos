@@ -1,0 +1,164 @@
+<html>
+<head>
+
+
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+	google.load("feeds", "1");
+
+	function initialize() {
+		var feed = new google.feeds.Feed("http://techzei.com/feed/");
+		feed.setNumEntries(10);
+		var count = 1;
+		feed.load(function(result) {
+			if (!result.error) {
+				var container = document.getElementById("feed");
+				var html = "";
+				for (var i = 0; i < result.feed.entries.length; i++) {
+					var entry = result.feed.entries[i];
+					html = "<h5>" +  "• <a href='" + entry.link + "'>" + entry.title + "</a>" + "</h5>";
+					var div = document.createElement("div");
+					div.innerHTML = html;
+					container.appendChild(div);            
+				}
+				document.write(html);
+			}
+		});
+
+		 var feed2 = new google.feeds.Feed("http://the4cast.com/feed");
+      feed2.setNumEntries(5);
+      var count = 1;
+      feed2.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feed2");
+          var html = "";
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            html = "<h5>" +  "• <a href='" + entry.link + "'>" + entry.title + "</a>" + "</h5>";
+            var div = document.createElement("div");
+            div.innerHTML = html;
+            container.appendChild(div);            
+          }
+          document.write(html);
+        }
+      });
+
+     var feed3 = new google.feeds.Feed("http://rss.thepiratebay.se/302");
+      feed3.setNumEntries(6);
+      var count = 1;
+      feed3.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feed3");
+          var html = "";
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            html = "<h5>" +  "• <a href='" + entry.link + "'>" + entry.title + "</a>" + "</h5>";
+            var div = document.createElement("div");
+            div.innerHTML = html;
+            container.appendChild(div);            
+          }
+          document.write(html);
+        }
+      });
+
+
+	}
+	google.setOnLoadCallback(initialize);
+
+	</script>
+
+	<style>
+	*{
+		font-family: Futura,Helvetica Nueue,Helvetica, Arial, sans-serif;
+		margin:0;
+		padding:0
+	}
+
+
+	body{
+		-webkit-font-smoothing:antialiased;
+		-webkit-text-size-adjust:none;
+		background-image: url("img/Background.png");
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 1280px;
+		height: 1024px;
+		z-index: 1;
+	}
+
+	a{
+		color:#32B8E0
+	}
+
+	.Logo_1 {
+		background-image: url("img/Logo-1.png");
+		position: absolute;
+		left: 150px;
+		top: 99px;
+		width: 168px;
+		height: 29px;
+		z-index: 24;
+	}
+	#feed {
+		background-image: url("img/Feed-1.png");
+		position: absolute;
+		left: 119px;
+		top: 144px;
+		width: 240px;
+		height: 366px;
+		z-index: 23;
+	}
+
+
+#feed2 {
+  background-image: url("img/Feed-2.png");
+  position: absolute;
+  left: 520px;
+  top: 144px;
+  width: 240px;
+  height: 366px;
+  z-index: 20;
+}
+.Logo_2 {
+  background-image: url("img/Logo-2.png");
+  position: absolute;
+  left: 556px;
+  top: 99px;
+  width: 168px;
+  height: 29px;
+  z-index: 19;
+}
+
+
+#feed3 {
+  background-image: url("img/Feed-3.png");
+  position: absolute;
+  left: 921px;
+  top: 144px;
+  width: 240px;
+  height: 366px;
+  z-index: 16;
+}
+.Logo_3 {
+  background-image: url("img/Logo-3.png");
+  position: absolute;
+  left: 957px;
+  top: 99px;
+  width: 168px;
+  height: 29px;
+  z-index: 15;
+}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="Logo_1"></div>
+    <div id="feed"></div>
+    <div id="feed2"></div>
+    <div id="feed3"></div>
+
+</body>
+</html>
