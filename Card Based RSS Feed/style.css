@@ -19,7 +19,6 @@
  margin: -2px;
  padding: 34px;
  box-shadow: 1px 1px 15px #ACACAC;
-
  width: 20vw;
 }
 body{
@@ -31,4 +30,21 @@ a{
   color: rgb(17, 192, 207);
   font-size: 20px;
   font-weight: 200;
+}
+img{
+  max-width: 100%;
+  min-width: 80%;
+}
+.pubdate{
+  font-size: 9px;
+  font-style: italic;
+}
+.author
+{
+  font-size: 12px;
+  text-align: right;
+}
+.title
+{
+  text-transform: uppercase;
 }
