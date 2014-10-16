@@ -27,24 +27,24 @@ body{
 }
 a{
   text-decoration: none;
-  color: rgb(17, 192, 207);
+  color: rgb(0, 210, 228);
   font-size: 20px;
   font-weight: 200;
 }
 img{
   max-width: 100%;
   min-width: 80%;
-}
-.pubdate{
-  font-size: 9px;
-  font-style: italic;
+  max-height: 80%;
 }
 .author
 {
+  font-family: 'Helvetica Neue',sans-serif;
+  font-weight: 100;
   font-size: 12px;
   text-align: right;
 }
 .title
 {
   text-transform: uppercase;
+  font-weight: bolder;
 }
