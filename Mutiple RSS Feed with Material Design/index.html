@@ -1,0 +1,133 @@
+<html>
+
+<head>
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="material/css/ripples.min.css" rel="stylesheet">
+    <link href="material/css/material-wfont.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+      <script type="text/javascript">
+
+          google.load("feeds", "1");
+
+          function initialize() {
+              var feed = new google.feeds.Feed("http://techzei.com/feed");
+          feed.setNumEntries(4);
+          feed.load(function (result) {
+            if (!result.error) 
+            {
+              result.feed.entries.forEach(function(entry)
+              {
+                  var images = $(entry.content).find('img').map(function(){
+                             return $(this).attr('src')
+                             }).get();
+                  $('#feed').append(' <div class="list-group-item"> <div class="row-picture"> <img class ="circle" alt ="icon" src="' + (images.length == 0 ? 'placeholder.png' : images[0]) + '"/>  </div><a class="title" href="' + entry.link + '"> <div class="row-content"><h4 class="list-group-item-heading">' + entry.title + '</h4></a>   <p class="list-group-item-text">'+ entry.contentSnippet+'</p>  </div> </div>    <div class ="list-group-separator"></div> ');
+              });
+            }
+          });
+
+          }
+
+       google.setOnLoadCallback(initialize);
+
+     </script>
+
+     <script type="text/javascript">
+
+        function initialize() {
+            var feed = new google.feeds.Feed("http://the4cast.com/feed/");
+        feed.setNumEntries(4);
+        feed.load(function (result) {
+          if (!result.error) 
+          {
+            result.feed.entries.forEach(function(entry)
+            {
+                var images = $(entry.content).find('img').map(function(){
+                           return $(this).attr('src')
+                           }).get();
+                $('#feed1').append(' <div class="list-group-item"> <div class="row-picture"> <img class ="circle" alt ="icon" src="' + (images.length == 0 ? 'placeholder.png' : images[0]) + '"/>  </div><a class="title" href="' + entry.link + '"> <div class="row-content"><h4 class="list-group-item-heading">' + entry.title + '</h4></a>   <p class="list-group-item-text">'+ entry.contentSnippet+'</p>  </div> </div>    <div class ="list-group-separator"></div> ');
+            });
+          }
+        });
+
+        }
+        google.setOnLoadCallback(initialize);
+
+    </script>
+
+    <script type="text/javascript">
+
+        function initialize() {
+            var feed = new google.feeds.Feed("http://reddit.com/r/AppHookup/.rss");
+        feed.setNumEntries(4);
+        feed.load(function (result) {
+          if (!result.error) 
+          {
+            result.feed.entries.forEach(function(entry)
+            {
+                var images = $(entry.content).find('img').map(function(){
+                           return $(this).attr('src')
+                           }).get();
+                $('#feed2').append(' <div class="list-group-item"> <div class="row-picture"> <img class ="circle" alt ="icon" src="' + (images.length == 0 ? 'placeholder.png' : images[0]) + '"/>  </div><a class="title" href="' + entry.link + '"> <div class="row-content"><h4 class="list-group-item-heading">' + entry.title + '</h4></a>   <p class="list-group-item-text">'+ entry.contentSnippet+'</p>  </div> </div>    <div class ="list-group-separator"></div> ');
+            });
+          }
+        });
+
+        }
+        google.setOnLoadCallback(initialize);
+
+    </script>
+
+</head>
+
+<body>
+
+ <div class="navbar navbar-default">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Feed + Material Design</a>
+         </div>
+    </div>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-4 column">
+          <button type="button" class="btn btn-primary btn-info btn-lg">Techzei</button>
+          <div class="list-group">
+          <div id="feed"></div>
+          </div>
+        </div>
+
+        <div class="col-md-4 column">
+          <button type="button" class="btn btn-primary btn-info btn-lg">The4Cast</button>
+          <div class="list-group">
+          <div id="feed1"></div>
+          </div>
+        </div>
+             
+        <div class="col-md-4 column">
+        <button type="button" class="btn btn-primary btn-info btn-lg">AppHookup</button>
+        <div class="list-group">
+        <div id="feed2"></div>
+        </div>
+        </div>
+
+    </div>
+</div>   
+
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script src="material/js/ripples.min.js"></script>
+    <script src="material/js/material.min.js"></script>
+
+</body>
+
+</html>
