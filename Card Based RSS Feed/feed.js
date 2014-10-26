@@ -2,7 +2,7 @@ google.load("feeds", "1");
   function initialize() 
   {
     var feed = new google.feeds.Feed("http://techzei.com/feed");
-    feed.setNumEntries(9);
+    feed.setNumEntries(15);
     feed.load(function (result) {
       if (!result.error) 
       {
