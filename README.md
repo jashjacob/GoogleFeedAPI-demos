@@ -1,3 +1,5 @@
+Like all things Google - Goolge Feed API is now deprecated. 
+================
 Google Feed API - demos
 ================
 
